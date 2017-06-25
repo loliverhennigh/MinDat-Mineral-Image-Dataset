@@ -6,6 +6,6 @@ To generate the URL list run `make_url_list.py` and this will go through [mindat
 
 ## Sample images!
 
-![alt tag](https://github.com/loliverhennigh//blob/master/test/figs/car_flow_1.png)
-![alt tag](https://github.com/loliverhennigh//blob/master/test/figs/car_flow_1.png)
+![alt tag](https://github.com/loliverhennigh/MinDat-Mineral-Image-Dataset/blob/master/data/mindat-images/photos_000_60_000060400989970186.jpg)
+![alt tag](https://github.com/loliverhennigh/MinDat-Mineral-Image-Dataset/blob/master/data/mindat-images/photos_018_20_0018201001275761055.jpg)
 
