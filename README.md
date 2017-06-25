@@ -4,3 +4,8 @@ A dataset of +500,000 mineral images with labels taken from [mindat.org]. The da
 ## Generating Dataset for Yourself
 To generate the URL list run `make_url_list.py` and this will go through [mindat.org] and scrap all the images. This will save several hundred files in the `img_urls` directory. After this run the `concat_url_files` script to make one unified CVS file called `img_url_list.csv`. Now you can run `convert_img_url_list.py` to generate an image list with cleaned up labels. Right now this scrip just removes variation text. For example, many images are Quartz with variation of Capped Quartz, Chalcedony Quartz, etc. These extra labels get removed to just read Quartz. The script can be easily modified to clean the data in other ways though. The last script is `download_images.py` that downloads all the images in the `img_url_list_converted.csv` to a directory specified in the file. The total dataset is around 400G. Some images are extremely high resolution so the total space can be greatly reduce by resizing before saving however for my purposes I wanted the high resolution images and kept that in.
 
+## Sample images!
+
+![alt tag](https://github.com/loliverhennigh//blob/master/test/figs/car_flow_1.png)
+![alt tag](https://github.com/loliverhennigh//blob/master/test/figs/car_flow_1.png)
+
