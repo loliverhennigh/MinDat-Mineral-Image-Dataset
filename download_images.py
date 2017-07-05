@@ -14,18 +14,24 @@ from threading import Thread
 base_save_path = './data/mindat-images/'
 
 # read list of img urls
-with open('img_url_list.csv', 'r') as f:
+with open('img_url_list_converted.csv', 'r') as f:
   lines = f.readlines()
 url_list = []
 for l in lines:
-  url_list.append(l.split(',')[0]) 
+  url_list.append(l.replace(' ','').split(',')) 
 
 # make worker
 url_queue = Queue(50)
 def worker():
   while True:
-    url = url_queue.get()
-    name = base_save_path + '_'.join(url.split('/')[3:])
+    url_and_label = url_queue.get()
+    url = url_and_label[0]
+    label = url_and_label[1:-1]
+    label.sort()
+    name = base_save_path + '_'.join(label)
+    if not os.path.isdir(name):
+      os.mkdir(name)
+    name = name + '/' + '_'.join(url.split('/')[3:])
     if not os.path.exists(name):
       img_data = requests.get(url).content
       with open(name, 'wb') as handler:
