@@ -27,7 +27,8 @@ for i in xrange(len(lines)):
   replace_line.append(new_line[0])
   for j in xrange(len(new_line)-2):
     mineral_name = _convert_string_to_mineral_list(new_line[j+1])
-    replace_line.append(mineral_name)
+    if mineral_name not in replace_line:
+      replace_line.append(mineral_name)
   lines[i] = replace_line 
 
 img_url_list_converted_file = open("img_url_list_converted.csv", "w")
