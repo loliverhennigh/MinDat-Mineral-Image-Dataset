@@ -11,7 +11,7 @@ from Queue import Queue
 from threading import Thread
 
 # base path to save images
-base_save_path = './data/mindat-images/'
+base_save_path = '/data/mindat-images/'
 
 # read list of img urls
 with open('img_url_list_converted.csv', 'r') as f:
@@ -28,7 +28,7 @@ def worker():
     url = url_and_label[0]
     label = url_and_label[1:-1]
     label.sort()
-    name = base_save_path + '_'.join(label)
+    name = base_save_path + '_'.join(label).replace('/','')
     if not os.path.isdir(name):
       os.mkdir(name)
     name = name + '/' + '_'.join(url.split('/')[3:])
